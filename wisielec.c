@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "funkcje.c"
+#include "losowanie_slowa.c"
 #include "game.c"
 #include "choose_category.c"
 
