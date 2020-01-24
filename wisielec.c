@@ -11,6 +11,7 @@ int main(){
     int d;
     char tab[1];
     char tab3[100];
+    char answer[128];
 //menu 
 printf("HANGMAN 2020\n 1.PLAY\n 2.RANKING\n 3.EXIT GAME\n");
 //wybór menu 
@@ -28,12 +29,12 @@ case 1:         //start gry
     if(b==2){
         //printf("tutaj jest gra po angielsku\n");
         choose_category_eng(c);
-        game_english(tab);
+        game_english(answer);
     }
     if(b==3){
         //printf("tutaj jest gra po niemiecku\n");
         choose_category_d(c);
-        game_deutsch(tab);
+        game_deutsch(answer);
     }
 
     break;
@@ -41,7 +42,7 @@ case 2: printf("tutaj jest ranking\n");        //ranking
     break;
 case 3: return 0;                             //zakończ gre
     break;
-default: printf("Type numer 1-3\n");
+default: printf("Type number 1-3\n");
 }
 return 0;
 }

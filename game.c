@@ -1,4 +1,7 @@
-void game_english(char tab[1]){
+#include <stdio.h>
+#include <string.h>
+
+void game_polisch(char tab[1]){
     char tab3[100];
 //wyświetlanie szubiennicy
     //system("clear");  
@@ -18,9 +21,67 @@ void game_english(char tab[1]){
     printf("Type letter: ");
     scanf("%s", tab);
 }
-void game_polisch(char tab[1]){
-    printf("skopiować wersje angielską i tłumaczyć");
+int game_english(/*char tab[1]*/char answer[128]){
+ 
+  // Get word to guess
+  //char answer[128];
+  //printf("Enter word to guess: ");
+  //fflush(stdout);
+  //scanf(" %s", answer);
+
+  // Set the mask array - mask[i] is true if the
+  // character s[i] has been guessed.  The mask
+  // must be allocated, and initialized to all false
+  int N = strlen(answer);
+  int mask[N];
+  for (int i=0; i < N; ++i) {
+    mask[i] = 0;
+  }
+
+  // Loop over each round of guessing
+  int gameover = 0;
+  while (! gameover) {
+    // Print word with *s for unguessed letters
+    printf("The word is : ");
+    for(int j=0; j < N; ++j) {
+      if (mask[j]) {
+        printf("%c", answer[j]);
+      }
+      else {
+        printf("*");
+      }
+    }
+    printf("\n");
+
+    // Get player's next guess
+    char guess;
+    printf("Letter? ");
+    fflush(stdout);
+    scanf(" %c", &guess);
+
+    // Mark true all mask positions corresponding to guess
+    for(int k=0; k < N; ++k) {
+      if (answer[k] == guess) {
+	mask[k] = 1;
+      }
+    }
+
+    // Determine whether the player has won!
+    gameover = 1;
+    for(int m = 0; m < N; ++m) {
+      if (!mask[m]) {
+        gameover = 0;
+        break;
+      }
+    }
+  }
+
+  // Print victory message!
+  printf("Victory! The word is \"%s\".\n", answer);
+
+  return 0;
 }
-void game_deutsch(char tab[1]){
-     printf("skopiować wersje angielską i tłumaczyć");
+
+void game_deutsch(char answer[128]){
+     printf("spielen sznela");
 }
