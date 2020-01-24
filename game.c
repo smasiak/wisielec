@@ -2,10 +2,10 @@
 #include <string.h>
 
 void game_polisch(char tab[1]){
-    char tab3[100];
+    //char tab3[100];
 //wyświetlanie szubiennicy
     //system("clear");  
-    printf("%s\n", tab3);
+    //printf("%s\n", tab3);
     printf("Let's start\n");
     printf("   ____\n");
     printf("  |    |      \n");
@@ -22,7 +22,7 @@ void game_polisch(char tab[1]){
     scanf("%s", tab);
 }
 int game_english(/*char tab[1]*/char answer[128]){
- 
+system("clear");
   // Get word to guess
   //char answer[128];
   //printf("Enter word to guess: ");
@@ -83,5 +83,6 @@ int game_english(/*char tab[1]*/char answer[128]){
 }
 
 void game_deutsch(char answer[128]){
-     printf("spielen sznela");
+    system("clear");
+    printf("Spielen\n");
 }
