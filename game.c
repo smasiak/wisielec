@@ -29,7 +29,7 @@ int choose_category_eng(int c){
     }
     printf("\n");
     char guess;
-    printf("Letter? ");
+    printf("Type letter ");
     fflush(stdout);
     scanf(" %c", &guess);
 
@@ -77,7 +77,7 @@ int choose_category_eng(int c){
     printf("\n");
 
     char guess;
-    printf("Letter? ");
+    printf("Type letter ");
     fflush(stdout);
     scanf(" %c", &guess);
 
@@ -125,7 +125,7 @@ int choose_category_eng(int c){
     printf("\n");
 
     char guess;
-    printf("Letter? ");
+    printf("Type letter ");
     fflush(stdout);
     scanf(" %c", &guess);
 
@@ -164,7 +164,7 @@ int choose_category_pl(int c){
   }
   int gameover = 0;
   while (! gameover) {
-    printf("The word is : ");
+    printf("Slowo to : ");
     for(int j=0; j < N; ++j) {
       if (mask[j]) {
         printf("%c", answer[j]);
@@ -176,7 +176,7 @@ int choose_category_pl(int c){
     printf("\n");
 
     char guess;
-    printf("Letter? ");
+    printf("Podaj litere? ");
     fflush(stdout);
     scanf(" %c", &guess);
 
@@ -195,7 +195,7 @@ int choose_category_pl(int c){
     }
   }
 
-  printf("Victory! The word is \"%s\".\n", answer);
+  printf("Zwyciestwo! Slowo to \"%s\".\n", answer);
 
   return 0;
 }
@@ -213,7 +213,7 @@ int choose_category_pl(int c){
 
   int gameover = 0;
   while (! gameover) {
-    printf("The word is : ");
+    printf("Slowo to: ");
     for(int j=0; j < N; ++j) {
       if (mask[j]) {
         printf("%c", answer[j]);
@@ -224,7 +224,7 @@ int choose_category_pl(int c){
     }
     printf("\n");
     char guess;
-    printf("Letter? ");
+    printf("Podaj litere? ");
     fflush(stdout);
     scanf(" %c", &guess);
 
@@ -241,7 +241,7 @@ int choose_category_pl(int c){
       }
     }
   }
-  printf("Victory! The word is \"%s\".\n", answer);
+  printf("Zwyciestwo, slowo to \"%s\".\n", answer);
 
   return 0;
 }
@@ -257,7 +257,7 @@ int choose_category_pl(int c){
   }
   int gameover = 0;
   while (! gameover) {
-    printf("The word is : ");
+    printf("Slowo to : ");
     for(int j=0; j < N; ++j) {
       if (mask[j]) {
         printf("%c", answer[j]);
@@ -269,7 +269,7 @@ int choose_category_pl(int c){
     printf("\n");
 
     char guess;
-    printf("Letter? ");
+    printf("Podaj litere? ");
     fflush(stdout);
     scanf(" %c", &guess);
 
@@ -286,14 +286,14 @@ int choose_category_pl(int c){
       }
     }
   }
-  printf("Victory! The word is \"%s\".\n", answer);
+  printf("Zwyciestwo, slowo to \"%s\".\n", answer);
 
   return 0;
 }
     }
 
 int choose_category_d(int c){
-   printf("Choose category\n 1.Sport\n 2.Kunst\n 3.Beruf\n");
+   printf("Kategorien auswahlen\n 1.Sport\n 2.Kunst\n 3.Beruf\n");
     scanf("%d", &c);
     if(c==1){
         printf("Kategorie Sport\n");
@@ -306,7 +306,7 @@ int choose_category_d(int c){
   }
   int gameover = 0;
   while (! gameover) {
-    printf("The word is : ");
+    printf("das wort ist : ");
     for(int j=0; j < N; ++j) {
       if (mask[j]) {
         printf("%c", answer[j]);
@@ -318,7 +318,7 @@ int choose_category_d(int c){
     printf("\n");
 
     char guess;
-    printf("Letter? ");
+    printf("Geben Sie den Buchstaben ein ");
     fflush(stdout);
     scanf(" %c", &guess);
     for(int k=0; k < N; ++k) {
@@ -334,7 +334,7 @@ int choose_category_d(int c){
       }
     }
   }
-  printf("Victory! The word is \"%s\".\n", answer);
+  printf("Sieg! das wort ist \"%s\".\n", answer);
 
   return 0;
 }
@@ -351,7 +351,7 @@ int choose_category_d(int c){
   }
   int gameover = 0;
   while (! gameover) {
-    printf("The word is : ");
+    printf("das wort ist: ");
     for(int j=0; j < N; ++j) {
       if (mask[j]) {
         printf("%c", answer[j]);
@@ -362,7 +362,7 @@ int choose_category_d(int c){
     }
     printf("\n");
     char guess;
-    printf("Letter? ");
+    printf("Geben Sie den Buchstaben ein");
     fflush(stdout);
     scanf(" %c", &guess);
     for(int k=0; k < N; ++k) {
@@ -378,7 +378,7 @@ int choose_category_d(int c){
       }
     }
   }
-  printf("Victory! The word is \"%s\".\n", answer);
+  printf("Sieg das wort ist \"%s\".\n", answer);
 
   return 0;
 }
@@ -393,7 +393,7 @@ int choose_category_d(int c){
   }
   int gameover = 0;
   while (! gameover) {
-    printf("The word is : ");
+    printf("das wort ist: ");
     for(int j=0; j < N; ++j) {
       if (mask[j]) {
         printf("%c", answer[j]);
@@ -404,7 +404,7 @@ int choose_category_d(int c){
     }
     printf("\n");
     char guess;
-    printf("Letter? ");
+    printf("Geben Sie den Buchstaben ein");
     fflush(stdout);
     scanf(" %c", &guess);
     for(int k=0; k < N; ++k) {
@@ -420,7 +420,7 @@ int choose_category_d(int c){
       }
     }
   }
-  printf("Victory! The word is \"%s\".\n", answer);
+  printf("Sieg das wort ist \"%s\".\n", answer);
 
   return 0;
 }
