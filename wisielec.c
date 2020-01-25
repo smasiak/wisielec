@@ -3,14 +3,13 @@
 #include <time.h>
 #include "losowanie.c"
 #include "game.c"
-//#include "choose_category.c"
+#include "choose_category.c"
 
 int main(){
     int c;
     int b;
     int d;
     char tab[1];
-    //char tab3[100];
     char answer[128];
 //menu 
 printf("HANGMAN 2020\n 1.PLAY\n 2.RANKING\n 3.EXIT GAME\n");
