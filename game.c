@@ -1,47 +1,70 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-void game_polisch(char tab[1]){
-    //char tab3[100];
-//wyświetlanie szubiennicy
-    //system("clear");  
-    //printf("%s\n", tab3);
-    printf("Let's start\n");
-    printf("   ____\n");
-    printf("  |    |      \n");
-    printf("  |          \n");
-    printf("  |        \n");
-    printf("  |    \n");
-    printf("  |   \n");
-    printf(" _|_\n");
-    printf("|   |______\n");
-    printf("|          |\n");
-    printf("|__________|\n");
-//miejsce na litere 
-    printf("Type letter: ");
-    scanf("%s", tab);
-}
-int game_english(/*char tab[1]*/char answer[128]){
-system("clear");
-  // Get word to guess
-  //char answer[128];
-  //printf("Enter word to guess: ");
-  //fflush(stdout);
-  //scanf(" %s", answer);
+int choose_category_eng(int c){
+    int d;
+    drawing_numbers(d);
+   printf("Choose category\n 1.sport\n 2.art\n 3.history\n");
+    scanf("%d", &c);
+    if(c==1){
+        printf("category sport\n");
+  char answer[128]={"goal"};
+  fflush(stdout);
+  int N = strlen(answer);
+  int mask[N];
+  for (int i=0; i < N; ++i) {
+    mask[i] = 0;
+  }
+  int gameover = 0;
+  while (! gameover) {
+    printf("The word is : ");
+    for(int j=0; j < N; ++j) {
+      if (mask[j]) {
+        printf("%c", answer[j]);
+      }
+      else {
+        printf("*");
+      }
+    }
+    printf("\n");
+    char guess;
+    printf("Letter? ");
+    fflush(stdout);
+    scanf(" %c", &guess);
 
-  // Set the mask array - mask[i] is true if the
-  // character s[i] has been guessed.  The mask
-  // must be allocated, and initialized to all false
+    for(int k=0; k < N; ++k) {
+      if (answer[k] == guess) {
+	mask[k] = 1;
+      }
+    }
+
+    gameover = 1;
+    for(int m = 0; m < N; ++m) {
+      if (!mask[m]) {
+        gameover = 0;
+        break;
+      }
+    }
+  }
+
+  printf("Victory! The word is \"%s\".\n", answer);
+
+  return 0;
+}
+    if(c==2){
+        printf("category art\n");
+  char answer[128]={"painting"};
+  fflush(stdout);
+
   int N = strlen(answer);
   int mask[N];
   for (int i=0; i < N; ++i) {
     mask[i] = 0;
   }
 
-  // Loop over each round of guessing
   int gameover = 0;
   while (! gameover) {
-    // Print word with *s for unguessed letters
     printf("The word is : ");
     for(int j=0; j < N; ++j) {
       if (mask[j]) {
@@ -53,20 +76,116 @@ system("clear");
     }
     printf("\n");
 
-    // Get player's next guess
     char guess;
     printf("Letter? ");
     fflush(stdout);
     scanf(" %c", &guess);
 
-    // Mark true all mask positions corresponding to guess
+    for(int k=0; k < N; ++k) {
+      if (answer[k] == guess) {
+	mask[k] = 1;
+      }
+    }
+    gameover = 1;
+    for(int m = 0; m < N; ++m) {
+      if (!mask[m]) {
+        gameover = 0;
+        break;
+      }
+    }
+  }
+  printf("Victory! The word is \"%s\".\n", answer);
+
+  return 0;
+}
+    
+    
+    if(c==3){
+        printf("category history\n");
+  char answer[128]={"battle"};
+  fflush(stdout);
+
+  int N = strlen(answer);
+  int mask[N];
+  for (int i=0; i < N; ++i) {
+    mask[i] = 0;
+  }
+
+  int gameover = 0;
+  while (! gameover) {
+    printf("The word is : ");
+    for(int j=0; j < N; ++j) {
+      if (mask[j]) {
+        printf("%c", answer[j]);
+      }
+      else {
+        printf("*");
+      }
+    }
+    printf("\n");
+
+    char guess;
+    printf("Letter? ");
+    fflush(stdout);
+    scanf(" %c", &guess);
+
     for(int k=0; k < N; ++k) {
       if (answer[k] == guess) {
 	mask[k] = 1;
       }
     }
 
-    // Determine whether the player has won!
+    gameover = 1;
+    for(int m = 0; m < N; ++m) {
+      if (!mask[m]) {
+        gameover = 0;
+        break;
+      }
+    }
+  }
+  printf("Victory! The word is \"%s\".\n", answer);
+
+  return 0;
+
+    }
+}
+int choose_category_pl(int c){
+   printf("Choose category\n 1.sport\n 2.sztuka\n 3.historia\n");
+    scanf("%d", &c);
+    if(c==1){
+        printf("kategoria sport\n");
+  char answer[128]={"bramka"};
+  fflush(stdout);
+
+  int N = strlen(answer);
+  int mask[N];
+  for (int i=0; i < N; ++i) {
+    mask[i] = 0;
+  }
+  int gameover = 0;
+  while (! gameover) {
+    printf("The word is : ");
+    for(int j=0; j < N; ++j) {
+      if (mask[j]) {
+        printf("%c", answer[j]);
+      }
+      else {
+        printf("*");
+      }
+    }
+    printf("\n");
+
+    char guess;
+    printf("Letter? ");
+    fflush(stdout);
+    scanf(" %c", &guess);
+
+    for(int k=0; k < N; ++k) {
+      if (answer[k] == guess) {
+	mask[k] = 1;
+      }
+    }
+
     gameover = 1;
     for(int m = 0; m < N; ++m) {
       if (!mask[m]) {
@@ -76,13 +195,233 @@ system("clear");
     }
   }
 
-  // Print victory message!
   printf("Victory! The word is \"%s\".\n", answer);
 
   return 0;
 }
+    
+    if(c==2){
+        printf("kategoria sztuka\n");
+  char answer[128]={"rysunek"};
+  fflush(stdout);
 
-void game_deutsch(char answer[128]){
-    system("clear");
-    printf("Spielen\n");
+  int N = strlen(answer);
+  int mask[N];
+  for (int i=0; i < N; ++i) {
+    mask[i] = 0;
+  }
+
+  int gameover = 0;
+  while (! gameover) {
+    printf("The word is : ");
+    for(int j=0; j < N; ++j) {
+      if (mask[j]) {
+        printf("%c", answer[j]);
+      }
+      else {
+        printf("*");
+      }
+    }
+    printf("\n");
+    char guess;
+    printf("Letter? ");
+    fflush(stdout);
+    scanf(" %c", &guess);
+
+    for(int k=0; k < N; ++k) {
+      if (answer[k] == guess) {
+	mask[k] = 1;
+      }
+    }
+    gameover = 1;
+    for(int m = 0; m < N; ++m) {
+      if (!mask[m]) {
+        gameover = 0;
+        break;
+      }
+    }
+  }
+  printf("Victory! The word is \"%s\".\n", answer);
+
+  return 0;
+}
+    
+    if(c==3){
+        printf("kategoria historia\n");
+  char answer[128]={"grunwald"};
+  fflush(stdout);
+  int N = strlen(answer);
+  int mask[N];
+  for (int i=0; i < N; ++i) {
+    mask[i] = 0;
+  }
+  int gameover = 0;
+  while (! gameover) {
+    printf("The word is : ");
+    for(int j=0; j < N; ++j) {
+      if (mask[j]) {
+        printf("%c", answer[j]);
+      }
+      else {
+        printf("*");
+      }
+    }
+    printf("\n");
+
+    char guess;
+    printf("Letter? ");
+    fflush(stdout);
+    scanf(" %c", &guess);
+
+    for(int k=0; k < N; ++k) {
+      if (answer[k] == guess) {
+	mask[k] = 1;
+      }
+    }
+    gameover = 1;
+    for(int m = 0; m < N; ++m) {
+      if (!mask[m]) {
+        gameover = 0;
+        break;
+      }
+    }
+  }
+  printf("Victory! The word is \"%s\".\n", answer);
+
+  return 0;
+}
+    }
+
+int choose_category_d(int c){
+   printf("Choose category\n 1.Sport\n 2.Kunst\n 3.Beruf\n");
+    scanf("%d", &c);
+    if(c==1){
+        printf("Kategorie Sport\n");
+  char answer[128]={"BALL"};
+  fflush(stdout);
+  int N = strlen(answer);
+  int mask[N];
+  for (int i=0; i < N; ++i) {
+    mask[i] = 0;
+  }
+  int gameover = 0;
+  while (! gameover) {
+    printf("The word is : ");
+    for(int j=0; j < N; ++j) {
+      if (mask[j]) {
+        printf("%c", answer[j]);
+      }
+      else {
+        printf("*");
+      }
+    }
+    printf("\n");
+
+    char guess;
+    printf("Letter? ");
+    fflush(stdout);
+    scanf(" %c", &guess);
+    for(int k=0; k < N; ++k) {
+      if (answer[k] == guess) {
+	mask[k] = 1;
+      }
+    }
+    gameover = 1;
+    for(int m = 0; m < N; ++m) {
+      if (!mask[m]) {
+        gameover = 0;
+        break;
+      }
+    }
+  }
+  printf("Victory! The word is \"%s\".\n", answer);
+
+  return 0;
+}
+    
+    if(c==2){
+        printf("Kategorie Kunst\n");
+  char answer[128]={"pinsel"};
+  fflush(stdout);
+
+  int N = strlen(answer);
+  int mask[N];
+  for (int i=0; i < N; ++i) {
+    mask[i] = 0;
+  }
+  int gameover = 0;
+  while (! gameover) {
+    printf("The word is : ");
+    for(int j=0; j < N; ++j) {
+      if (mask[j]) {
+        printf("%c", answer[j]);
+      }
+      else {
+        printf("*");
+      }
+    }
+    printf("\n");
+    char guess;
+    printf("Letter? ");
+    fflush(stdout);
+    scanf(" %c", &guess);
+    for(int k=0; k < N; ++k) {
+      if (answer[k] == guess) {
+	mask[k] = 1;
+      }
+    }
+    gameover = 1;
+    for(int m = 0; m < N; ++m) {
+      if (!mask[m]) {
+        gameover = 0;
+        break;
+      }
+    }
+  }
+  printf("Victory! The word is \"%s\".\n", answer);
+
+  return 0;
+}
+    if(c==3){
+        printf("Kategorie Beruf\n");
+  char answer[128]={"klempner"};
+  fflush(stdout);
+  int N = strlen(answer);
+  int mask[N];
+  for (int i=0; i < N; ++i) {
+    mask[i] = 0;
+  }
+  int gameover = 0;
+  while (! gameover) {
+    printf("The word is : ");
+    for(int j=0; j < N; ++j) {
+      if (mask[j]) {
+        printf("%c", answer[j]);
+      }
+      else {
+        printf("*");
+      }
+    }
+    printf("\n");
+    char guess;
+    printf("Letter? ");
+    fflush(stdout);
+    scanf(" %c", &guess);
+    for(int k=0; k < N; ++k) {
+      if (answer[k] == guess) {
+	mask[k] = 1;
+      }
+    }
+    gameover = 1;
+    for(int m = 0; m < N; ++m) {
+      if (!mask[m]) {
+        gameover = 0;
+        break;
+      }
+    }
+  }
+  printf("Victory! The word is \"%s\".\n", answer);
+
+  return 0;
+}
 }

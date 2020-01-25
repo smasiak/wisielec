@@ -3,7 +3,7 @@
 #include <time.h>
 #include "losowanie_slowa.c"
 #include "game.c"
-#include "choose_category.c"
+//#include "choose_category.c"
 
 int main(){
     int c;
@@ -24,17 +24,17 @@ case 1:         //start gry
     if(b==1){
         //printf("tutaj jest gra po polsku\n");
         choose_category_pl(c);
-        game_polisch(tab);
+        //game_polisch(tab);
     }
     if(b==2){
         //printf("tutaj jest gra po angielsku\n");
         choose_category_eng(c);
-        game_english(answer);
+        //game_english(answer);
     }
     if(b==3){
         //printf("tutaj jest gra po niemiecku\n");
         choose_category_d(c);
-        game_deutsch(answer);
+        //game_deutsch(answer);
     }
 
     break;
