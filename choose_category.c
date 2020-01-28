@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+ 
+void drawing_numbers(int d){        //funkcja służąca do losowania liczby "d" która ma oznaczać numer słowa
+    srand(time(NULL));
+    printf("%d\n", rand()%3);
+}
 int choose_category_eng(int c){
     int d;
     drawing_numbers(d);

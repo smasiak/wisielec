@@ -1,39 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "losowanie.c"
-#include "game.c"
-#include "choose_category.c"
+#include "game.c"                  //ciało gry
+#include "choose_category.c"       //wybór kategori
 
 int main(){
-    int c;
-    int b;
-    int d;
-    char tab[1];
-    char answer[128];
+    int a;       //zmienna wyboru w menu
+    int b;       //zmienna wybor języka
+    int c;       //zmienna wyboru kategorii
+    int d;       //zmienna losowa do wyobru przez komputer słowa z kategorii do odgadniecia
+    char tab[1]; //podbieranie litery do odgadnięcia
+    char answer[128];  //słowo do odgadnięcia
 //menu 
 printf("HANGMAN 2020\n 1.PLAY\n 2.RANKING\n 3.EXIT GAME\n");
-//wybór menu 
-int a;
+//wybór w menu 
 scanf("%d", &a);
-switch(a){
+switch(a){                 
 case 1:         //start gry
     printf("Choose language\n 1.Polski\n 2.English\n 3.Deutsch\n");
     scanf("%d", &b);
     if(b==1){
-        //printf("tutaj jest gra po polsku\n");
-        choose_category_pl(c);
-        //game_polisch(tab);
+        choose_category_pl(c);               //gra po polsku//odnośnik do funkcji z folderu choose category
     }
     if(b==2){
-        //printf("tutaj jest gra po angielsku\n");
-        choose_category_eng(c);
-        //game_english(answer);
+        choose_category_eng(c);              //gra po angielsku//odnośnik do funkcji z folderu choose category
     }
     if(b==3){
-        //printf("tutaj jest gra po niemiecku\n");
-        choose_category_d(c);
-        //game_deutsch(answer);
+        choose_category_d(c);                //gra po niemiecku//odnośnik do funkcji z folderu choose category
     }
 
     break;

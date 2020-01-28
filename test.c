@@ -1,3 +1,6 @@
+
+//TUTAJ JEST KOD Z INTERNETU GRY HANGMAN
+
 /*https://www.usna.edu/Users/cs/roche/courses/s17si204/notes/06/files
 .php?f=hangman.c&fbclid=IwAR1LIUOpdRcDfTc3yucjve4fBT8Iq_VaS1tn4kY5xEwM0TY-iIUQZJyY9-U*/
 
